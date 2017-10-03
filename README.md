@@ -25,6 +25,7 @@ Uma lista pode ser acompanhada no trello em: https://trello.com/b/s2JpLhqc
 * Rafael Pinheiro / [github](https://github.com/rafaelwendel)
 * Tadeu Carnevalli / [github](https://github.com/carnevalli)
 * Marcos Baesse / [github](https://github.com/marcosbaesse)
+* Cláudio Neto / [github](https://github.com/crcneto)
 
 https://github.com/CIBr/User-Guide-CodeIgniter-PtBr/graphs/contributors
 
