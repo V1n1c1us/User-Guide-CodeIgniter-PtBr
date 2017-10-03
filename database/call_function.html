@@ -427,32 +427,26 @@
 <h1>Personalizando Chamadas de Funções<a class="headerlink" href="#custom-function-calls" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="this-db-call-function">
 <h2>$this-&gt;db-&gt;call_function();<a class="headerlink" href="#this-db-call-function" title="Permalink to this headline">¶</a></h2>
-<p>This function enables you to call PHP database functions that are not
-natively included in CodeIgniter, in a platform independent manner. For
-example, let&#8217;s say you want to call the mysql_get_client_info()
-function, which is <strong>not</strong> natively supported by CodeIgniter. You could
-do so like this:</p>
+<p>Esta função permite chamar funções de banco de dados com PHP que não são incluídas de forma nativa no CodeIgniter, de forma independente da plataforma.
+Por exemplo, digamos que você deseja chamar a função mysql_get_client_info(), que <strong>não</strong> é suportada nativamente pelo CodeIgniter.
+Você poderia fazer assim:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;get_client_info&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>You must supply the name of the function, <strong>without</strong> the mysql_
-prefix, in the first parameter. The prefix is added automatically based
-on which database driver is currently being used. This permits you to
-run the same function on different database platforms. Obviously not all
-function calls are identical between platforms, so there are limits to
-how useful this function can be in terms of portability.</p>
-<p>Any parameters needed by the function you are calling will be added to
-the second parameter.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
+<p>Você deve fornecer o nome da função, <strong>sem</strong> o prefixo mysql_, no primeiro parâmetro.
+O prefixo é adicionado automaticamente com base em qual driver de banco de dados está sendo usado atualmente.
+Isso permite que você execute a mesma função em diferentes plataformas de banco de dados.
+Obviamente, nem todas as chamadas de função são idênticas entre plataformas, portanto, há limites para a utilidade desta função em termos de portabilidade.</p>
+<p>Todos os parâmetros necessários para a função que você está chamando serão adicionados ao segundo parâmetro.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;alguma_função&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Often, you will either need to supply a database connection ID or a
-database result ID. The connection ID can be accessed using:</p>
+<p>Muitas vezes, você precisará fornecer uma ID de conexão de banco de dados ou uma ID de resultado de banco de dados. A ID da conexão pode ser acessada usando:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">conn_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The result ID can be accessed from within your result object, like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SOME QUERY&quot;</span><span class="p">);</span>
+<p>O ID do resultado pode ser acessado a partir do seu objeto de resultado, como este:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;ALGUMA CONSULTA&quot;</span><span class="p">);</span>
 
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_id</span><span class="p">;</span>
 </pre></div>
