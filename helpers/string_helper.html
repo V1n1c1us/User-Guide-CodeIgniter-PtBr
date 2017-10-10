@@ -425,12 +425,10 @@
 
   <div class="section" id="string-helper">
 <h1>Auxiliar de String<a class="headerlink" href="#string-helper" title="Permalink to this headline">¶</a></h1>
-<p>The Auxiliar de String file contains functions that assist in working with
-strings.</p>
+<p>O arquivo Auxiliar de String contém funções que permitem trabalhar com cadeia de caracteres (strings).</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Please note that these functions are NOT intended, nor
-suitable to be used for any kind of security-related logic.</p>
+<p class="first admonition-title">Importante</p>
+<p class="last">Por favor, note que essas funções NÃO são destinadas, nem são adequadas para qualquer tipo de lógica relacionada à segurança.</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -456,12 +454,12 @@ suitable to be used for any kind of security-related logic.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$type</strong> (<em>string</em>) &#8211; Randomization type</li>
-<li><strong>$len</strong> (<em>int</em>) &#8211; Output string length</li>
+<li><strong>$type</strong> (<em>string</em>) &#8211; Tipo de randomização</li>
+<li><strong>$len</strong> (<em>int</em>) &#8211; Tamanho da saída da string</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">A random string</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Uma string aleatória</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -469,27 +467,24 @@ suitable to be used for any kind of security-related logic.</p>
 </tr>
 </tbody>
 </table>
-<p>Generates a random string based on the type and length you specify.
-Useful for creating passwords or generating random hashes.</p>
-<p>The first parameter specifies the type of string, the second parameter
-specifies the length. The following choices are available:</p>
+<p>Gera uma string aleatória com base no tipo e tamanho que você especifica. Útil para criar senhas ou gerar hashes aleatórias.</p>
+<p>O primeira parâmetro especifica o tipo da string, o segunda parâmetro especifica o tamanhp. As seguintes opções estão disponíveis:</p>
 <ul class="simple">
-<li><strong>alpha</strong>: A string with lower and uppercase letters only.</li>
-<li><strong>alnum</strong>: Alpha-numeric string with lower and uppercase characters.</li>
-<li><strong>basic</strong>: A random number based on <tt class="docutils literal"><span class="pre">mt_rand()</span></tt>.</li>
-<li><strong>numeric</strong>: Numeric string.</li>
-<li><strong>nozero</strong>: Numeric string with no zeros.</li>
-<li><strong>md5</strong>: An encrypted random number based on <tt class="docutils literal"><span class="pre">md5()</span></tt> (fixed length of 32).</li>
-<li><strong>sha1</strong>: An encrypted random number based on <tt class="docutils literal"><span class="pre">sha1()</span></tt> (fixed length of 40).</li>
+<li><strong>alpha</strong>: Uma string apenas com letras maiúsculas e minúsculas.</li>
+<li><strong>alnum</strong>: Uma string alfanumérica com caracteres maiúsculas e minúsculas.</li>
+<li><strong>basic</strong>: Um número aleatório com base no <tt class="docutils literal"><span class="pre">mt_rand()</span></tt>.</li>
+<li><strong>numeric</strong>: Uma string de números.</li>
+<li><strong>nozero</strong>: Uma string sem zeros.</li>
+<li><strong>md5</strong>: Um número aleatório criptografado com base no <tt class="docutils literal"><span class="pre">md5()</span></tt> (comprimento fixo de 32).</li>
+<li><strong>sha1</strong>: Um número aleatório criptografado com base no <tt class="docutils literal"><span class="pre">sha1()</span></tt> (comprimento fixo de 40).</li>
 </ul>
-<p>Usage example:</p>
+<p>Exemplo de uso:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">random_string</span><span class="p">(</span><span class="s1">&#39;alnum&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Usage of the <em>unique</em> and <em>encrypt</em> types is DEPRECATED. They
-are just aliases for <em>md5</em> and <em>sha1</em> respectively.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">O uso dos tipos <em>únicos</em> e <em>criptografado</em> é DEPRECADO. Eles são apenas atalhos para <em>md5</em> e <em>sha1</em>, respectivamente.</p>
 </div>
 </dd></dl>
 
@@ -501,13 +496,13 @@ are just aliases for <em>md5</em> and <em>sha1</em> respectively.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
-<li><strong>$separator</strong> (<em>string</em>) &#8211; Separator to append a duplicate number with</li>
-<li><strong>$first</strong> (<em>int</em>) &#8211; Starting number</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; String de entrada</li>
+<li><strong>$separator</strong> (<em>string</em>) &#8211; Separador para anexar com um número duplicado</li>
+<li><strong>$first</strong> (<em>int</em>) &#8211; Número inicial</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">An incremented string</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Uma string incrementada</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -515,10 +510,9 @@ are just aliases for <em>md5</em> and <em>sha1</em> respectively.</p>
 </tr>
 </tbody>
 </table>
-<p>Increments a string by appending a number to it or increasing the
-number. Useful for creating &#8220;copies&#8221; or a file or duplicating database
-content which has unique titles or slugs.</p>
-<p>Usage example:</p>
+<p>Incrementa uma string acrescentando um número ou aumentando o número.
+Útil para criar "cópias" ou um arquivo ou conteúdo de banco de dados duplicado que possui títulos únicos ou slugs.</p>
+<p>Exemplo de uso:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_1&quot;</span>
 <span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// &quot;file-2&quot;</span>
 <span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file_4&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_5&quot;</span>
@@ -534,11 +528,11 @@ content which has unique titles or slugs.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$args</strong> (<em>mixed</em>) &#8211; A variable number of arguments</li>
+<li><strong>$args</strong> (<em>mixed</em>) &#8211; Um número variável de argumentos</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Alternated string(s)</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String(s) alternada(s)</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">mixed</p>
@@ -546,16 +540,14 @@ content which has unique titles or slugs.</p>
 </tr>
 </tbody>
 </table>
-<p>Allows two or more items to be alternated between, when cycling through
-a loop. Example:</p>
+<p>Permite que dois ou mais itens sejam alternados entre si, quando estiver dentro de um loop. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;string one&#39;</span><span class="p">,</span> <span class="s1">&#39;string two&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>You can add as many parameters as you want, and with each iteration of
-your loop the next item will be returned.</p>
+<p>Você pode adicionar tantos parâmetros quanto quiser, e com cada iteração do loop o próximo item será retornado.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">);</span>
@@ -563,9 +555,8 @@ your loop the next item will be returned.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">To use multiple separate calls to this function simply call the
-function with no arguments to re-initialize.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Para usar várias chamadas separadas para esta função, basta chamar a função sem argumentos para reinicializar.</p>
 </div>
 </dd></dl>
 
@@ -577,12 +568,12 @@ function with no arguments to re-initialize.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>string</em>) &#8211; Input</li>
-<li><strong>$num</strong> (<em>int</em>) &#8211; Number of times to repeat</li>
+<li><strong>$data</strong> (<em>string</em>) &#8211; Entrada</li>
+<li><strong>$num</strong> (<em>int</em>) &#8211; Número de vezes para repetir</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Repeated string</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String repetida</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -590,16 +581,15 @@ function with no arguments to re-initialize.</p>
 </tr>
 </tbody>
 </table>
-<p>Generates repeating copies of the data you submit. Example:</p>
+<p>Gera cópias repetidas dos dados que você envia. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">repeater</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above would generate 30 newlines.</p>
+<p>O exemplo anterior geraria 30 novas linhas.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This function is DEPRECATED. Use the native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt>
-instead.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Esta função é DEPRECADA. Use o nativo <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> em vez disso.</p>
 </div>
 </dd></dl>
 
@@ -611,11 +601,11 @@ instead.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; String de entrada</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">A string with normalized slashes</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Uma string com barras diagonais normalizadas</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -623,11 +613,10 @@ instead.</p>
 </tr>
 </tbody>
 </table>
-<p>Converts double slashes in a string to a single slash, except those
-found in URL protocol prefixes (e.g. http&amp;#58;//).</p>
-<p>Example:</p>
+<p>Converte barras duplas em uma seqüência de caracteres para uma barra única, exceto aquelas encontradas nos prefixos de protocolo de URL (p.e. http&amp;#58;//).</p>
+<p>Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;http://example.com//index.php&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nx">reduce_double_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// results in &quot;http://example.com/index.php&quot;</span>
+<span class="k">echo</span> <span class="nx">reduce_double_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// resulta em &quot;http://example.com/index.php&quot;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -640,11 +629,11 @@ found in URL protocol prefixes (e.g. http&amp;#58;//).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>mixed</em>) &#8211; Input string or an array of strings</li>
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; String de entrada ou um array de strings</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String(s) with stripped slashes</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String(s) com as barras removidas</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">mixed</p>
@@ -652,11 +641,11 @@ found in URL protocol prefixes (e.g. http&amp;#58;//).</p>
 </tr>
 </tbody>
 </table>
-<p>Removes any slashes from an array of strings.</p>
-<p>Example:</p>
+<p>Remove todas as barras de um array de strings.</p>
+<p>Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$str</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s1">&#39;Is your name O\&#39;reilly?&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;No, my name is O\&#39;connor.&#39;</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s1">&#39;O seu nome é O\&#39;reilly?&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Não, meu nome é O\&#39;connor.&#39;</span>
 <span class="p">);</span>
 
 <span class="nv">$str</span> <span class="o">=</span> <span class="nx">strip_slashes</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
@@ -664,16 +653,15 @@ found in URL protocol prefixes (e.g. http&amp;#58;//).</p>
 </div>
 <p>The above will return the following array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s2">&quot;Is your name O&#39;reilly?&quot;</span><span class="p">,</span>
-        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s2">&quot;No, my name is O&#39;connor.&quot;</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s2">&quot;O seu nome é O&#39;reilly?&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Não, meu nome é O&#39;connor.&quot;</span>
 <span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For historical reasons, this function will also accept
-and handle string inputs. This however makes it just an
-alias for <tt class="docutils literal"><span class="pre">stripslashes()</span></tt>.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Por motivos históricos, esta função também aceita e manipula entradas de string.
+Isso, no entanto, torna apenas um apelido para <tt class="docutils literal"><span class="pre">stripslashes()</span></tt>.</p>
 </div>
 </dd></dl>
 
@@ -685,11 +673,11 @@ alias for <tt class="docutils literal"><span class="pre">stripslashes()</span></
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; String de entrada</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Slash-trimmed string</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String sem barras no início ou final</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -697,14 +685,14 @@ alias for <tt class="docutils literal"><span class="pre">stripslashes()</span></
 </tr>
 </tbody>
 </table>
-<p>Removes any leading/trailing slashes from a string. Example:</p>
+<p>Remove todas barras no início e fim de uma string. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;/this/that/theother/&quot;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nx">trim_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// results in this/that/theother</span>
+<span class="k">echo</span> <span class="nx">trim_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// resulta em this/that/theother</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This function is DEPRECATED. Use the native <tt class="docutils literal"><span class="pre">trim()</span></tt> instead:
+<p class="first admonition-title">Nota</p>
+<p class="last">Esta função é DEPRECADA. Use a função nativa <tt class="docutils literal"><span class="pre">trim()</span></tt> como alternativa:
 |
 | trim($str, &#8216;/&#8217;);</p>
 </div>
@@ -718,13 +706,13 @@ alias for <tt class="docutils literal"><span class="pre">stripslashes()</span></
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Text to search in</li>
-<li><strong>$character</strong> (<em>string</em>) &#8211; Character to reduce</li>
-<li><strong>$trim</strong> (<em>bool</em>) &#8211; Whether to also trim the specified character</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; Texto para pesquisar em</li>
+<li><strong>$character</strong> (<em>string</em>) &#8211; Caractere para reduzir</li>
+<li><strong>$trim</strong> (<em>bool</em>) &#8211; Se também cortar o caractere especificado</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Reduced string</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String reduzida</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -732,16 +720,14 @@ alias for <tt class="docutils literal"><span class="pre">stripslashes()</span></
 </tr>
 </tbody>
 </table>
-<p>Reduces multiple instances of a particular character occuring directly
-after each other. Example:</p>
+<p>Reduz multiplas intâncias de um caractere em particular que ocorrem diretamente após a outra. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Fred, Bill,, Joe, Jimmy&quot;</span><span class="p">;</span>
-<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">//results in &quot;Fred, Bill, Joe, Jimmy&quot;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">//resulta em &quot;Fred, Bill, Joe, Jimmy&quot;</span>
 </pre></div>
 </div>
-<p>If the third parameter is set to TRUE it will remove occurrences of the
-character at the beginning and the end of the string. Example:</p>
+<p>Se o terceiro parâmetro estiver definido como TRUE, ele irá remover as ocorrências do caractere no início e no final da string. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;,Fred, Bill,, Joe, Jimmy,&quot;</span><span class="p">;</span>
-<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">//results in &quot;Fred, Bill, Joe, Jimmy&quot;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">//resulta em &quot;Fred, Bill, Joe, Jimmy&quot;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -754,11 +740,11 @@ character at the beginning and the end of the string. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; String de entrada</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String with quotes converted to HTML entities</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String com aspas convertidas em entidades HTML</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -766,10 +752,9 @@ character at the beginning and the end of the string. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Converts single and double quotes in a string to the corresponding HTML
-entities. Example:</p>
+<p>Converte aspas simples e duplas em uma string para as entidades HTML correspondentes. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="nv">$string</span> <span class="o">=</span> <span class="nx">quotes_to_entities</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//results in &quot;Joe&amp;#39;s &amp;quot;dinner&amp;quot;&quot;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">quotes_to_entities</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//resulta em &quot;Joe&amp;#39;s &amp;quot;dinner&amp;quot;&quot;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -782,11 +767,11 @@ entities. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+<li><strong>$str</strong> (<em>string</em>) &#8211; String de entrada</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String with quotes stripped</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">String com aspas espalhadas</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">string</p>
@@ -794,9 +779,9 @@ entities. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Removes single and double quotes from a string. Example:</p>
+<p>Remove aspas simples e duplas de uma string. Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="nv">$string</span> <span class="o">=</span> <span class="nx">strip_quotes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//results in &quot;Joes dinner&quot;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">strip_quotes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//resulta em &quot;Joes dinner&quot;</span>
 </pre></div>
 </div>
 </dd></dl>
