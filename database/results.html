@@ -449,7 +449,7 @@
 </pre></div>
 </div>
 <p>O método acima é um atalho para <tt class="docutils literal"><span class="pre">result_object()</span></tt>.</p>
-<p>Você também pode passar uma string para <tt class="docutils literal"><span class="pre">result()</span></tt> informando a classe a ser instanciada para o objeto resultante do for each (observação: esta classe deve estar carregada)</p>
+<p>Você também pode passar uma string para <tt class="docutils literal"><span class="pre">result()</span></tt> informando a classe a ser instanciada para o objeto resultante do foreach (observação: esta classe deve estar carregada)</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users;&quot;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span>
@@ -553,7 +553,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Você pode opcionalmente passar &#8216;object&#8217; (padrão) ou &#8216;array&#8217; na ordem para especificar o tipo do valor retornado:</p>
+<p>Você pode opcionalmente passar &#8216;object&#8217; (padrão) ou &#8216;array&#8217; como parâmetro para especificar o tipo do valor retornado:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">();</span>               <span class="c1">// objeto</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">);</span>       <span class="c1">// objeto</span>
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>        <span class="c1">// array associativo</span>
@@ -618,7 +618,7 @@ O único parâmetro é o nome da classe a ser instanciada.</p>
 </pre></div>
 </div>
 <p><strong>custom_row_object()</strong></p>
-<p>Retorna um único registro dos resultados de sua consulta/query.O primeiro parâmetro é o número da linha
+<p>Retorna um único registro dos resultados de sua consulta/query. O primeiro parâmetro é o número da linha
 do resultado. O segundo parâmetro é o nome da classe a ser instanciada.</p>
 <p>Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SUA CONSULTA&quot;</span><span class="p">);</span>
@@ -641,7 +641,7 @@ do resultado. O segundo parâmetro é o nome da classe a ser instanciada.</p>
 <div class="section" id="result-helper-methods">
 <h2><a class="toc-backref" href="#id4">Funções Auxiliares de Resultados</a><a class="headerlink" href="#result-helper-methods" title="Permalink to this headline">¶</a></h2>
 <p><strong>num_rows()</strong></p>
-<p>O número de linhas retornado pela consulta/query. Nota: Nestte exemplo, $query 
+<p>O número de linhas retornado pela consulta/query. Nota: Neste exemplo, $query
 é a variável ao qual o resultado da consulta está associado:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">);</span>
 
@@ -691,14 +691,14 @@ do resultado. O segundo parâmetro é o nome da classe a ser instanciada.</p>
 buscado. Ele só é útil em combinação com <tt class="docutils literal"><span class="pre">unbuffered_row()</span></tt>.</p>
 <p>Ele aceita um valor inteiro positivo, cujo padrão é 0 e retorna TRUE em caso de sucesso ou FALSO em caso de falha.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT `field_name` FROM `table_name`&#39;</span><span class="p">);</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">data_seek</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// Skip the first 5 rows</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">data_seek</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// Pular as 5 primeiras linhas</span>
 <span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">Nem todos os drivers de banco de dados suportam este recurso e vão retornar FALSE.
-Mais notavelmente - você não estaá permitido usar isto com PDO.</p>
+Mais notavelmente - você não poderá usá-lo com PDO.</p>
 </div>
 </div>
 <div class="section" id="class-reference">
@@ -835,7 +835,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 </tbody>
 </table>
 <p>Busca a próxima linha do resultado e a retorna no formato requisitado.</p>
-<p>Uso: veja <a class="reference internal" href="#result-rows">Linhas ResultantesResult Rows</a>.</p>
+<p>Uso: veja <a class="reference internal" href="#result-rows">Linhas Resultantes</a>.</p>
 </dd></dl>
 
 <dl class="method">
