@@ -426,26 +426,26 @@
 <p>Existem várias maneiras de se gerar resultados de consultas:</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#result-arrays" id="id1">Arrays do Resultado</a></li>
-<li><a class="reference internal" href="#result-rows" id="id2">Linhas do Resultado</a></li>
+<li><a class="reference internal" href="#result-arrays" id="id1">Vários Resultados em um Array</a></li>
+<li><a class="reference internal" href="#result-rows" id="id2">Resultado Único</a></li>
 <li><a class="reference internal" href="#custom-result-objects" id="id3">Resultados Personalizados como Objetos</a></li>
 <li><a class="reference internal" href="#result-helper-methods" id="id4">Funções Auxiliares de Resultados</a></li>
 <li><a class="reference internal" href="#class-reference" id="id5">Referência da Classe</a></li>
 </ul>
 </div>
 <div class="section" id="result-arrays">
-<h2><a class="toc-backref" href="#id1">Arrays do Resultado</a><a class="headerlink" href="#result-arrays" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Vários Resultados em um Array</a><a class="headerlink" href="#result-arrays" title="Permalink to this headline">¶</a></h2>
 <p><strong>result()</strong></p>
 <p>Este método retorna o resultado da consulta como um array de <strong>objetos</strong>, ou
-<strong>um array vazio</strong> em caso de falha. Normalmente você vai usar este método em uma iteração com foreach, assim:</p>
+<strong>um array vazio</strong> em caso de falha. Normalmente você vai usar este método em uma iteração com foreach, como esta:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SUA CONSULTA&quot;</span><span class="p">);</span>
-
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
-<span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
-<span class="p">}</span>
+  
+  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
+  <span class="p">{</span>
+          <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+          <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+          <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+  <span class="p">}</span>
 </pre></div>
 </div>
 <p>O método acima é um atalho para <tt class="docutils literal"><span class="pre">result_object()</span></tt>.</p>
@@ -460,7 +460,7 @@
 </pre></div>
 </div>
 <p><strong>result_array()</strong></p>
-<p>Este método retorna como resultado da consulta um array puro, ou um array vazio quando nenhum resultado é encontrado. Normalmente você vai usar isto em uma iteração através do foreach, assim:</p>
+<p>Este método retorna como resultado da consulta um array puro, ou um array vazio quando nenhum resultado é encontrado. Normalmente você vai usar isto em uma iteração através do foreach, como esta:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SUA CONSULTA&quot;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_array</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
@@ -473,7 +473,7 @@
 </div>
 </div>
 <div class="section" id="result-rows">
-<h2><a class="toc-backref" href="#id2">Linhas do Resultado</a><a class="headerlink" href="#result-rows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Resultado Único</a><a class="headerlink" href="#result-rows" title="Permalink to this headline">¶</a></h2>
 <p><strong>row()</strong></p>
 <p>Este método retorna uma linha em um único resultado. Se sua consulta tiver mais que um resultado, irá retornar a primeira linha. O resultado é retornado como um <strong>objeto</strong>. Aqui está um exemplo de uso:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SUA CONSULTA&quot;</span><span class="p">);</span>
@@ -496,8 +496,8 @@
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users LIMIT 1;&quot;</span><span class="p">);</span>
 <span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">);</span>
 
-<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// acessando o atributo</span>
-<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">reverse_name</span><span class="p">();</span> <span class="c1">// ou métodos definidos para a classe &#39;User&#39;</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// access attributes</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">reverse_name</span><span class="p">();</span> <span class="c1">// ou métoos definidos para a classe &#39;User&#39;</span>
 </pre></div>
 </div>
 <p><strong>row_array()</strong></p>
@@ -618,7 +618,7 @@ O único parâmetro é o nome da classe a ser instanciada.</p>
 </pre></div>
 </div>
 <p><strong>custom_row_object()</strong></p>
-<p>Retorna um único registro dos resultados de sua consulta/query. O primeiro parâmetro é o número da linha
+<p>Retorna um único registro dos resultados de sua consulta/query.O primeiro parâmetro é o número da linha
 do resultado. O segundo parâmetro é o nome da classe a ser instanciada.</p>
 <p>Exemplo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SUA CONSULTA&quot;</span><span class="p">);</span>
@@ -641,7 +641,7 @@ do resultado. O segundo parâmetro é o nome da classe a ser instanciada.</p>
 <div class="section" id="result-helper-methods">
 <h2><a class="toc-backref" href="#id4">Funções Auxiliares de Resultados</a><a class="headerlink" href="#result-helper-methods" title="Permalink to this headline">¶</a></h2>
 <p><strong>num_rows()</strong></p>
-<p>O número de linhas retornado pela consulta/query. Nota: Neste exemplo, $query
+<p>O número de linhas retornado pela consulta/query. Nota: Nestte exemplo, $query 
 é a variável ao qual o resultado da consulta está associado:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">);</span>
 
@@ -705,10 +705,10 @@ Mais notavelmente - você não estaá permitido usar isto com PDO.</p>
 <h2><a class="toc-backref" href="#id5">Referência da Classe</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="CI_DB_result">
-<em class="property">classe </em><tt class="descname">CI_DB_result</tt><a class="headerlink" href="#CI_DB_result" title="Permalink to this definition">¶</a></dt>
+<em class="property">classe </em><tt class="descname">CI_DB_result</tt><a class="headerlink" href="#CI_DB_result" title="Link permanente para esta definição">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_DB_result::result">
-<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::result" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::result" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -733,7 +733,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::result_array">
-<tt class="descname">result_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_array" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">result_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_array" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -750,7 +750,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::result_object">
-<tt class="descname">result_object</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_object" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">result_object</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_object" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -767,7 +767,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::custom_result_object">
-<tt class="descname">custom_result_object</tt><big>(</big><em>$class_name</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_result_object" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">custom_result_object</tt><big>(</big><em>$class_name</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_result_object" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -790,7 +790,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::row">
-<tt class="descname">row</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">[</span>, <em>$type = 'object'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">row</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">[</span>, <em>$type = 'object'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -816,7 +816,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::unbuffered_row">
-<tt class="descname">unbuffered_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::unbuffered_row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">unbuffered_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::unbuffered_row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -840,7 +840,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::row_array">
-<tt class="descname">row_array</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_array" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">row_array</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_array" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -864,7 +864,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::row_object">
-<tt class="descname">row_object</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_object" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">row_object</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_object" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -889,7 +889,7 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::custom_row_object">
-<tt class="descname">custom_row_object</tt><big>(</big><em>$n</em>, <em>$type</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_row_object" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">custom_row_object</tt><big>(</big><em>$n</em>, <em>$type</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_row_object" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -913,17 +913,17 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 
 <dl class="method">
 <dt id="CI_DB_result::data_seek">
-<tt class="descname">data_seek</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::data_seek" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">data_seek</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::data_seek" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$n</strong> (<em>int</em>) &#8211; Index of the results row to be returned next</li>
+<li><strong>$n</strong> (<em>int</em>) &#8211; Índice da linha dos próximos resultados a serem retornados</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">TRUE em caso de êxito, FALSE em caso de falha</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">bool</p>
@@ -931,20 +931,20 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 </tr>
 </tbody>
 </table>
-<p>Moves the internal results row pointer to the desired offset.</p>
-<p>Usage: see <a class="reference internal" href="#result-helper-methods">Result Helper Methods</a>.</p>
+<p>Move o ponteiro da linha dos resultados internos para o deslocamento desejado.</p>
+<p>Uso: veja <a class="reference internal" href="#result-helper-methods">Funções Auxiliares de Resultados</a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::set_row">
-<tt class="descname">set_row</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::set_row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_row</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::set_row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>mixed</em>) &#8211; Column name or array of key/value pairs</li>
-<li><strong>$value</strong> (<em>mixed</em>) &#8211; Value to assign to the column, $key is a single field name</li>
+<li><strong>$key</strong> (<em>misto</em>) &#8211; Nome da coluna ou array de par com chaves/valores</li>
+<li><strong>$value</strong> (<em>misto</em>) &#8211; Valor para associar à coluna, $key é um campo único</li>
 </ul>
 </td>
 </tr>
@@ -953,155 +953,155 @@ e <tt class="docutils literal"><span class="pre">custom_result_object()</span></
 </tr>
 </tbody>
 </table>
-<p>Assigns a value to a particular column.</p>
+<p>Atribui um valor para uma coluna em particular.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::next_row">
-<tt class="descname">next_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::next_row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">next_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::next_row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+<li><strong>$type</strong> (<em>string</em>) &#8211; Tipo do resultado requisitado - array, object ou nome da classe</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Próximo row of result set, or NULL if it doesn&#8217;t exist</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Próxima linha de um conjunto de resultados ou NULL se não exista próxima linha.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">mixed</p>
+<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">misto</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Returns the next row from the result set.</p>
+<p>Retorna a próxima linha de um conjunto de resultados.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::previous_row">
-<tt class="descname">previous_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::previous_row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">previous_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::previous_row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+<li><strong>$type</strong> (<em>string</em>) &#8211; Tipo de um resultado requisitado - array, object ou nome da classe</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Previous row of result set, or NULL if it doesn&#8217;t exist</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">A linha anterior de um conjunto de resultados ou NULL caso não exista linnha anterior.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">mixed</p>
+<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">misto</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Returns the previous row from the result set.</p>
+<p>Retorna a linnha anterior de um conjunto de resultados.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::first_row">
-<tt class="descname">first_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::first_row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">first_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::first_row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+<li><strong>$tipo</strong> (<em>string</em>) &#8211; 
+  Tipo do resultado requisitado - array, object ou o nome da classe</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">First row of result set, or NULL if it doesn&#8217;t exist</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Primeira linha do conjunto de resultados, ou NULL se não houverem resultados</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">mixed</p>
+<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">misto</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Returns the first row from the result set.</p>
+<p>Retorna o primeiro registro de um conjunto de registros.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::last_row">
-<tt class="descname">last_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::last_row" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">last_row</tt><big>(</big><span class="optional">[</span><em>$tipo = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::last_row" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parâmetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+<li><strong>$tipo</strong> (<em>string</em>) &#8211; Tipo de um resultado requerido - array, object ou nome da classe</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Last row of result set, or NULL if it doesn&#8217;t exist</p>
+<tr class="field-even field"><th class="field-name">Retorna:</th><td class="field-body"><p class="first">Último registro de um conjunto de registros, ou NULL se não houverem registros.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">mixed</p>
+<tr class="field-odd field"><th class="field-name">Tipo de retorno:</th><td class="field-body"><p class="first last">misto</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Returns the last row from the result set.</p>
+<p>Retorna o último registro de um conjunto de registros.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::num_rows">
-<tt class="descname">num_rows</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_rows" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">num_rows</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_rows" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Number of rows in the result set</td>
+<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Número de registros em um conjunto de registros</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Tipo de retorno:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
-<p>Returns the number of rows in the result set.</p>
-<p>Usage: see <a class="reference internal" href="#result-helper-methods">Result Helper Methods</a>.</p>
+<p>Retorna o número de registros em um conjunto de registros.</p>
+<p>Uso: veja <a class="reference internal" href="#result-helper-methods">Funções Auxiliares de Resultados</a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::num_fields">
-<tt class="descname">num_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">num_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_fields" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Number of fields in the result set</td>
+<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Número de campos em um conjunto de registros</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Tipo de retorno:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
-<p>Returns the number of fields in the result set.</p>
-<p>Usage: see <a class="reference internal" href="#result-helper-methods">Result Helper Methods</a>.</p>
+<p>Retorna o número de campos em um conjunto de registros.</p>
+<p>Uso: veja <a class="reference internal" href="#result-helper-methods">Funções Auxiliares de Resultados</a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::field_data">
-<tt class="descname">field_data</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::field_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">field_data</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::field_data" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Array containing field meta-data</td>
+<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Array contendo meta-dados do campo</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Tipo de retorno:</th><td class="field-body">array</td>
 </tr>
 </tbody>
 </table>
-<p>Generates an array of <tt class="docutils literal"><span class="pre">stdClass</span></tt> objects containing
-field meta-data.</p>
+<p>Gera um array do tipo de objeto <tt class="docutils literal"><span class="pre">stdClass</span></tt> contendo meta-dados do campo.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::free_result">
-<tt class="descname">free_result</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::free_result" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">free_result</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::free_result" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1110,25 +1110,24 @@ field meta-data.</p>
 </tr>
 </tbody>
 </table>
-<p>Frees a result set.</p>
-<p>Usage: see <a class="reference internal" href="#result-helper-methods">Result Helper Methods</a>.</p>
+<p>Libera da memória um conjunto de resultados.</p>
+<p>Uso: veja <a class="reference internal" href="#result-helper-methods">Funções Auxiliares de Resultados</a>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::list_fields">
-<tt class="descname">list_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::list_fields" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">list_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::list_fields" title="Link permanente para esta definição">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Array of column names</td>
+<tr class="field-odd field"><th class="field-name">Retorna:</th><td class="field-body">Array com os nomes das colunas</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Tipo de retorno:</th><td class="field-body">array</td>
 </tr>
 </tbody>
 </table>
-<p>Returns an array containing the field names in the
-result set.</p>
+<p>Retorna um array contendo os nomes das colunas em um conjunto de registros.</p>
 </dd></dl>
 
 </dd></dl>
