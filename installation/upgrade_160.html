@@ -427,12 +427,10 @@
 
   <div class="section" id="upgrading-from-1-5-4-to-1-6-0">
 <h1>Upgrading from 1.5.4 to 1.6.0<a class="headerlink" href="#upgrading-from-1-5-4-to-1-6-0" title="Permalink to this headline">¶</a></h1>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
-<p>Replace these files and directories in your &#8220;system&#8221; folder with the new
-versions:</p>
+<p>Substitua os seguintes diretórios na pasta "system" com as novas versões:</p>
 <ul class="simple">
 <li>system/codeigniter</li>
 <li>system/database</li>
@@ -442,13 +440,12 @@ versions:</p>
 <li>system/language</li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have any custom developed files in these folders please
-make copies of them first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
 </div>
 </div>
 <div class="section" id="step-2-add-time-to-update-to-your-config-php">
-<h2>Step 2: Add time_to_update to your config.php<a class="headerlink" href="#step-2-add-time-to-update-to-your-config-php" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 2: Add time_to_update to your config.php<a class="headerlink" href="#step-2-add-time-to-update-to-your-config-php" title="Permalink to this headline">¶</a></h2>
 <p>Add the following to application/config/config.php with the other
 session configuration options</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_time_to_update&#39;</span><span class="p">]</span>         <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
@@ -456,7 +453,7 @@ session configuration options</p>
 </div>
 </div>
 <div class="section" id="step-3-add-autoload-model">
-<h2>Step 3: Add $autoload[&#8216;model&#8217;]<a class="headerlink" href="#step-3-add-autoload-model" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 3: Add $autoload[&#8216;model&#8217;]<a class="headerlink" href="#step-3-add-autoload-model" title="Permalink to this headline">¶</a></h2>
 <p>Add the following to application/config/autoload.php</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">| -------------------------------------------------------------------</span>
@@ -473,7 +470,7 @@ session configuration options</p>
 </div>
 </div>
 <div class="section" id="step-4-add-to-your-database-php">
-<h2>Step 4: Add to your database.php<a class="headerlink" href="#step-4-add-to-your-database-php" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 4: Add to your database.php<a class="headerlink" href="#step-4-add-to-your-database-php" title="Permalink to this headline">¶</a></h2>
 <p>Make the following changes to your application/config/database.php file:</p>
 <p>Add the following variable above the database configuration options,
 with $active_group</p>
@@ -491,9 +488,8 @@ with $active_group</p>
 </div>
 </div>
 <div class="section" id="step-5-update-your-user-guide">
-<h2>Step 5: Update your user guide<a class="headerlink" href="#step-5-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
-<p>Please also replace your local copy of the user guide with the new
-version.</p>
+<h2>Passo 5: Atualize seu guia de usuário<a class="headerlink" href="#step-5-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
+<p>Também substitua sua cópia local do guia do usuário pela nova versão.</p>
 </div>
 </div>
 

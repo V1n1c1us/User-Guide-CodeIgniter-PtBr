@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Upgrading from 1.5.3 to 1.5.4 &mdash; Documentação do CodeIgniter 3.1.0</title>
+  <title>Atualizando da versão 1.5.3 para 1.5.4 &mdash; Documentação do CodeIgniter 3.1.0</title>
 
 
 
@@ -32,8 +32,8 @@
 
     <link rel="top" title="Documentação do CodeIgniter 3.1.0" href="../index.html"/>
         <link rel="up" title="Atualizando de uma versão anterior" href="upgrading.html"/>
-        <link rel="next" title="Upgrading from 1.5.2 to 1.5.3" href="upgrade_153.html"/>
-        <link rel="prev" title="Upgrading from 1.5.4 to 1.6.0" href="upgrade_160.html"/>
+        <link rel="next" title="Atualizando da versão 1.5.2 para 1.5.3" href="upgrade_153.html"/>
+        <link rel="prev" title="Atualizando da versão 1.5.4 para 1.6.0" href="upgrade_160.html"/>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -413,7 +413,7 @@
 
         <li><a href="upgrading.html">Atualizando de uma versão anterior</a> &raquo;</li>
 
-    <li>Upgrading from 1.5.3 to 1.5.4</li>
+    <li>Atualizando da versão 1.5.3 para 1.5.4</li>
     <li class="wy-breadcrumbs-aside">
 
     </li>
@@ -426,13 +426,11 @@
           <div role="main" class="document">
 
   <div class="section" id="upgrading-from-1-5-3-to-1-5-4">
-<h1>Upgrading from 1.5.3 to 1.5.4<a class="headerlink" href="#upgrading-from-1-5-3-to-1-5-4" title="Permalink to this headline">¶</a></h1>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
+<h1>Atualizando da versão 1.5.3 para 1.5.4<a class="headerlink" href="#upgrading-from-1-5-3-to-1-5-4" title="Permalink to this headline">¶</a></h1>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
-<p>Replace these files and directories in your &#8220;system&#8221; folder with the new
-versions:</p>
+<p>Substitua os seguintes diretórios na pasta "system" com as novas versões:</p>
 <ul class="simple">
 <li>application/config/mimes.php</li>
 <li>system/codeigniter</li>
@@ -442,14 +440,13 @@ versions:</p>
 <li>system/plugins</li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have any custom developed files in these folders please
-make copies of them first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
 </div>
 </div>
 <div class="section" id="step-2-add-charset-to-your-config-php">
-<h2>Step 2: Add charset to your config.php<a class="headerlink" href="#step-2-add-charset-to-your-config-php" title="Permalink to this headline">¶</a></h2>
-<p>Add the following to application/config/config.php</p>
+<h2>Passo 2: Adicione o charset ao seu config.php<a class="headerlink" href="#step-2-add-charset-to-your-config-php" title="Permalink to this headline">¶</a></h2>
+<p>Adicione o seguinte em application/config/config.php</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
 <span class="cm">| Default Character Set</span>
@@ -464,17 +461,15 @@ make copies of them first.</p>
 </div>
 </div>
 <div class="section" id="step-3-autoloading-language-files">
-<h2>Step 3: Autoloading language files<a class="headerlink" href="#step-3-autoloading-language-files" title="Permalink to this headline">¶</a></h2>
-<p>If you want to autoload any language files, add this line to
-application/config/autoload.php</p>
+<h2>Passo 3: Carregando automaticamente arquivos de idioma<a class="headerlink" href="#step-3-autoloading-language-files" title="Permalink to this headline">¶</a></h2>
+<p>Se você quiser carregar automaticamente qualquer arquivo de idioma, adicione esta linha em application/config/autoload.php</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-4-update-your-user-guide">
-<h2>Step 4: Update your user guide<a class="headerlink" href="#step-4-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
-<p>Please also replace your local copy of the user guide with the new
-version.</p>
+<h2>Passo 4: Atualize seu guia de usuário<a class="headerlink" href="#step-4-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
+<p>Também substitua sua cópia local do guia do usuário pela nova versão.</p>
 </div>
 </div>
 
@@ -484,10 +479,10 @@ version.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
 
-        <a href="upgrade_153.html" class="btn btn-neutral float-right" title="Upgrading from 1.5.2 to 1.5.3">Próximo <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="upgrade_153.html" class="btn btn-neutral float-right" title="Atualizando da versão 1.5.2 para 1.5.3">Próximo <span class="fa fa-arrow-circle-right"></span></a>
 
 
-        <a href="upgrade_160.html" class="btn btn-neutral" title="Upgrading from 1.5.4 to 1.6.0"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+        <a href="upgrade_160.html" class="btn btn-neutral" title="Atualizando da versão 1.5.4 para 1.6.0"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
 
     </div>
 

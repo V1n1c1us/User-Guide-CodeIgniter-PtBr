@@ -427,19 +427,18 @@
 
   <div class="section" id="upgrading-from-3-0-5-to-3-0-6">
 <h1>Upgrading from 3.0.5 to 3.0.6<a class="headerlink" href="#upgrading-from-3-0-5-to-3-0-6" title="Permalink to this headline">¶</a></h1>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
 <p>Substitua todos os arquivos e diretórios em seu diretório <em>system/</em>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">If you have any custom developed files in these directories,
 please make copies of them first.</p>
 </div>
 </div>
 <div class="section" id="step-2-update-your-index-php-file-optional">
-<h2>Step 2: Update your index.php file (optional)<a class="headerlink" href="#step-2-update-your-index-php-file-optional" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 2: Update your index.php file (optional)<a class="headerlink" href="#step-2-update-your-index-php-file-optional" title="Permalink to this headline">¶</a></h2>
 <p>We&#8217;ve made some tweaks to the index.php file, mostly related to proper
 usage of directory separators (i.e. use the <tt class="docutils literal"><span class="pre">DIRECTORY_SEPARATOR</span></tt>
 constant instead of a hard coded forward slash &#8220;/&#8221;).</p>
@@ -451,7 +450,7 @@ and ``$view_folder`` declarations from the old file and put them into the
 new one, replacing the defaults.</em></p>
 </div>
 <div class="section" id="step-3-remove-prep-for-form-usage-deprecation">
-<h2>Step 3: Remove &#8216;prep_for_form&#8217; usage (deprecation)<a class="headerlink" href="#step-3-remove-prep-for-form-usage-deprecation" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 3: Remove &#8216;prep_for_form&#8217; usage (deprecation)<a class="headerlink" href="#step-3-remove-prep-for-form-usage-deprecation" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../libraries/form_validation.html"><em>Formulário de Validação Library</em></a> has a
 <tt class="docutils literal"><span class="pre">prep_for_form()</span></tt> method, which is/can also be used as a rule in
 <tt class="docutils literal"><span class="pre">set_rules()</span></tt> to automatically perform HTML encoding on input data.</p>
@@ -463,7 +462,7 @@ automatically perform HTML escaping when necessary.</p>
 <p>Therefore, the <em>prep_for_form</em> method/rule is pretty much useless and is now
 deprecated and scheduled for removal in 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The method is still available, but you&#8217;re strongly encouraged to
 remove its usage sooner rather than later.</p>
 </div>
