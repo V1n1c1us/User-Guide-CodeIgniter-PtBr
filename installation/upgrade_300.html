@@ -427,7 +427,7 @@
 
   <div class="section" id="upgrading-from-2-2-x-to-3-0-x">
 <h1>Upgrading from 2.2.x to 3.0.x<a class="headerlink" href="#upgrading-from-2-2-x-to-3-0-x" title="Permalink to this headline">¶</a></h1>
-<p>Before performing an update you should take your site offline by replacing the index.php file with a static one.</p>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
 <p><strong>Replace</strong> all files and directories in your <em>system/</em> directory and
@@ -440,13 +440,12 @@ then put the new one in its place. A simple copy-paste may cause
 issues.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have any custom developed files in these folders please
-make copies of them first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
 </div>
 </div>
 <div class="section" id="step-2-update-your-classes-file-names">
-<h2>Step 2: Update your classes file names<a class="headerlink" href="#step-2-update-your-classes-file-names" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 2: Update your classes file names<a class="headerlink" href="#step-2-update-your-classes-file-names" title="Permalink to this headline">¶</a></h2>
 <p>Starting with CodeIgniter 3.0, all class filenames (libraries, drivers, controllers
 and models) must be named in a Ucfirst-like manner or in other words - they must
 start with a capital letter.</p>
@@ -477,17 +476,17 @@ helpers, hooks and anything else - it is only applied to classes.</p>
 in lowercase.</p>
 </div>
 <div class="section" id="step-3-replace-config-mimes-php">
-<h2>Step 3: Replace config/mimes.php<a class="headerlink" href="#step-3-replace-config-mimes-php" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 3: Substitua o config/mimes.php<a class="headerlink" href="#step-3-replace-config-mimes-php" title="Permalink to this headline">¶</a></h2>
 <p>This config file has been updated to contain more user mime-types, please copy
 it to <em>application/config/mimes.php</em>.</p>
 </div>
 <div class="section" id="step-4-remove-autoload-core-from-your-config-autoload-php">
-<h2>Step 4: Remove $autoload[&#8216;core&#8217;] from your config/autoload.php<a class="headerlink" href="#step-4-remove-autoload-core-from-your-config-autoload-php" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 4: Remove $autoload[&#8216;core&#8217;] from your config/autoload.php<a class="headerlink" href="#step-4-remove-autoload-core-from-your-config-autoload-php" title="Permalink to this headline">¶</a></h2>
 <p>Use of the <tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> config array has been deprecated as of CodeIgniter 1.4.1 and is now removed.
 Move any entries that you might have listed there to <tt class="docutils literal"><span class="pre">$autoload['libraries']</span></tt> instead.</p>
 </div>
 <div class="section" id="step-5-move-your-log-class-overrides-or-extensions">
-<h2>Step 5: Move your Log class overrides or extensions<a class="headerlink" href="#step-5-move-your-log-class-overrides-or-extensions" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 5: Move your Log class overrides or extensions<a class="headerlink" href="#step-5-move-your-log-class-overrides-or-extensions" title="Permalink to this headline">¶</a></h2>
 <p>The Log Class is considered as a &#8220;core&#8221; class and is now located in the
 <strong>system/core/</strong> directory. Therefore, in order for your Log class overrides
 or extensions to work, you need to move them to <strong>application/core/</strong>:</p>
@@ -496,7 +495,7 @@ or extensions to work, you need to move them to <strong>application/core/</stron
 application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockquote>
 </div>
 <div class="section" id="step-6-update-your-session-library-usage">
-<h2>Step 6: Update your Session library usage<a class="headerlink" href="#step-6-update-your-session-library-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 6: Update your Session library usage<a class="headerlink" href="#step-6-update-your-session-library-usage" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../libraries/sessions.html"><em>Biblioteca de Sessão</em></a> has been completely
 re-written in CodeIgniter 3 and now comes with a bunch of new features,
 but that also means that there are changes that you should make ...</p>
@@ -590,7 +589,7 @@ the <em>application/libraries/Session/</em> directory, although chances are that
 it will now also have to be re-factored.</p>
 </div>
 <div class="section" id="step-7-update-your-config-database-php">
-<h2>Step 7: Update your config/database.php<a class="headerlink" href="#step-7-update-your-config-database-php" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 7: Update your config/database.php<a class="headerlink" href="#step-7-update-your-config-database-php" title="Permalink to this headline">¶</a></h2>
 <p>Due to 3.0.0&#8217;s renaming of Active Record to Query Builder, inside your
 <strong>config/database.php</strong>, you will need to rename the <tt class="docutils literal"><span class="pre">$active_record</span></tt>
 variable to <tt class="docutils literal"><span class="pre">$query_builder</span></tt>:</p>
@@ -601,7 +600,7 @@ variable to <tt class="docutils literal"><span class="pre">$query_builder</span>
 </div>
 </div>
 <div class="section" id="step-8-replace-your-error-templates">
-<h2>Step 8: Replace your error templates<a class="headerlink" href="#step-8-replace-your-error-templates" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 8: Replace your error templates<a class="headerlink" href="#step-8-replace-your-error-templates" title="Permalink to this headline">¶</a></h2>
 <p>In CodeIgniter 3.0, the error templates are now considered as views and have been moved to the
 <em>application/views/errors</em> directory.</p>
 <p>Furthermore, we&#8217;ve added support for CLI error templates in plain-text format that unlike HTML,
@@ -610,7 +609,7 @@ is suitable for the command line. This of course requires another level of separ
 but you&#8217;ll have to copy the new <em>application/views/errors/cli</em> directory from the CodeIgniter archive.</p>
 </div>
 <div class="section" id="step-9-update-your-config-routes-php-file">
-<h2>Step 9: Update your config/routes.php file<a class="headerlink" href="#step-9-update-your-config-routes-php-file" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 9: Update your config/routes.php file<a class="headerlink" href="#step-9-update-your-config-routes-php-file" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="routes-containing-any">
 <h3>Routes containing :any<a class="headerlink" href="#routes-containing-any" title="Permalink to this headline">¶</a></h3>
 <p>Historically, CodeIgniter has always provided the <strong>:any</strong> wildcard in
@@ -657,7 +656,7 @@ admin/ directory as well. If not found, a Not Found (404) will be triggered.</p>
 </div>
 </div>
 <div class="section" id="step-10-many-functions-now-return-null-instead-of-false-on-missing-items">
-<h2>Step 10: Many functions now return NULL instead of FALSE on missing items<a class="headerlink" href="#step-10-many-functions-now-return-null-instead-of-false-on-missing-items" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 10: Many functions now return NULL instead of FALSE on missing items<a class="headerlink" href="#step-10-many-functions-now-return-null-instead-of-false-on-missing-items" title="Permalink to this headline">¶</a></h2>
 <p>Many methods and functions now return NULL instead of FALSE when the required items don&#8217;t exist:</p>
 <blockquote>
 <div><ul class="simple">
@@ -699,7 +698,7 @@ admin/ directory as well. If not found, a Not Found (404) will be triggered.</p>
 </div></blockquote>
 </div>
 <div class="section" id="step-11-usage-of-xss-filtering">
-<h2>Step 11: Usage of XSS filtering<a class="headerlink" href="#step-11-usage-of-xss-filtering" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 11: Usage of XSS filtering<a class="headerlink" href="#step-11-usage-of-xss-filtering" title="Permalink to this headline">¶</a></h2>
 <p>Many functions in CodeIgniter allow you to use its XSS filtering feature
 on demand by passing a boolean parameter. The default value of that
 parameter used to be boolean FALSE, but it is now changed to NULL and it
@@ -731,7 +730,7 @@ automatically overwritten when global XSS filtering is turned on.</p>
 </div>
 </div>
 <div class="section" id="step-12-check-for-potential-xss-issues-with-uris">
-<h2>Step 12: Check for potential XSS issues with URIs<a class="headerlink" href="#step-12-check-for-potential-xss-issues-with-uris" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 12: Check for potential XSS issues with URIs<a class="headerlink" href="#step-12-check-for-potential-xss-issues-with-uris" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../libraries/uri.html"><em>URI Library</em></a> used to automatically convert
 a certain set of &#8220;programmatic characters&#8221; to HTML entities when they
 are encountered in a URI segment.</p>
@@ -743,7 +742,7 @@ filter URI segments through <tt class="docutils literal"><span class="pre">$this
 output them.</p>
 </div>
 <div class="section" id="step-13-check-for-usage-of-the-xss-clean-form-validation-rule">
-<h2>Step 13: Check for usage of the &#8216;xss_clean&#8217; Form validation rule<a class="headerlink" href="#step-13-check-for-usage-of-the-xss-clean-form-validation-rule" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 13: Check for usage of the &#8216;xss_clean&#8217; Form validation rule<a class="headerlink" href="#step-13-check-for-usage-of-the-xss-clean-form-validation-rule" title="Permalink to this headline">¶</a></h2>
 <p>A largely unknown rule about XSS cleaning is that it should <em>only be
 applied to output</em>, as opposed to input data.</p>
 <p>We&#8217;ve made that mistake ourselves with our automatic and global XSS cleaning
@@ -759,7 +758,7 @@ belong in it.</p>
 a validation rule.</p>
 </div>
 <div class="section" id="step-14-update-usage-of-input-class-s-get-post-method">
-<h2>Step 14: Update usage of Classe de Entrada&#8217;s get_post() method<a class="headerlink" href="#step-14-update-usage-of-input-class-s-get-post-method" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 14: Update usage of Classe de Entrada&#8217;s get_post() method<a class="headerlink" href="#step-14-update-usage-of-input-class-s-get-post-method" title="Permalink to this headline">¶</a></h2>
 <p>Previously, the <a class="reference internal" href="../libraries/input.html"><em>Classe de Entrada</em></a> method <tt class="docutils literal"><span class="pre">get_post()</span></tt>
 was searching first in POST data, then in GET data. This method has been
 modified so that it searches in GET then in POST, as its name suggests.</p>
@@ -767,12 +766,12 @@ modified so that it searches in GET then in POST, as its name suggests.</p>
 <tt class="docutils literal"><span class="pre">get_post()</span></tt> was doing before.</p>
 </div>
 <div class="section" id="step-15-update-usage-of-directory-helper-s-directory-map-function">
-<h2>Step 15: Update usage of Auxiliar de Diretório&#8217;s directory_map() function<a class="headerlink" href="#step-15-update-usage-of-directory-helper-s-directory-map-function" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 15: Update usage of Auxiliar de Diretório&#8217;s directory_map() function<a class="headerlink" href="#step-15-update-usage-of-directory-helper-s-directory-map-function" title="Permalink to this headline">¶</a></h2>
 <p>In the resulting array, directories now end with a trailing directory
 separator (i.e. a slash, usually).</p>
 </div>
 <div class="section" id="step-16-update-usage-of-database-forge-s-drop-table-method">
-<h2>Step 16: Update usage of Database Forge&#8217;s drop_table() method<a class="headerlink" href="#step-16-update-usage-of-database-forge-s-drop-table-method" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 16: Update usage of Database Forge&#8217;s drop_table() method<a class="headerlink" href="#step-16-update-usage-of-database-forge-s-drop-table-method" title="Permalink to this headline">¶</a></h2>
 <p>Up until now, <tt class="docutils literal"><span class="pre">drop_table()</span></tt> added an IF EXISTS clause by default or it didn&#8217;t work
 at all with some drivers. In CodeIgniter 3.0, the IF EXISTS condition is no longer added
 by default and has an optional second parameter that allows that instead and is set to
@@ -786,13 +785,13 @@ FALSE by default.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The given example uses MySQL-specific syntax, but it should work across
 all drivers with the exception of ODBC.</p>
 </div>
 </div>
 <div class="section" id="step-17-change-usage-of-email-library-with-multiple-emails">
-<h2>Step 17: Change usage of Email library with multiple emails<a class="headerlink" href="#step-17-change-usage-of-email-library-with-multiple-emails" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 17: Change usage of Email library with multiple emails<a class="headerlink" href="#step-17-change-usage-of-email-library-with-multiple-emails" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../libraries/email.html"><em>Email Library</em></a> will automatically clear the
 set parameters after successfully sending emails. To override this behaviour,
 pass FALSE as the first parameter in the <tt class="docutils literal"><span class="pre">send()</span></tt> method:</p>
@@ -804,7 +803,7 @@ pass FALSE as the first parameter in the <tt class="docutils literal"><span clas
 </div>
 </div>
 <div class="section" id="step-18-update-your-form-validation-language-lines">
-<h2>Step 18: Update your Form_validation language lines<a class="headerlink" href="#step-18-update-your-form-validation-language-lines" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 18: Update your Form_validation language lines<a class="headerlink" href="#step-18-update-your-form-validation-language-lines" title="Permalink to this headline">¶</a></h2>
 <p>Two improvements have been made to the <a class="reference internal" href="../libraries/form_validation.html"><em>Formulário de Validação Library</em></a>&#8216;s <a class="reference internal" href="../libraries/language.html"><em>language</em></a>
 files and error messages format:</p>
 <blockquote>
@@ -832,7 +831,7 @@ allow more flexibility than what <cite>sprintf()</cite> offers:</p>
 </ul>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The old formatting still works, but the non-prefixed line keys
 are DEPRECATED and scheduled for removal in CodeIgniter 3.1+.
 Therefore you&#8217;re encouraged to update its usage sooner rather than
@@ -840,7 +839,7 @@ later.</p>
 </div>
 </div>
 <div class="section" id="step-19-make-sure-your-base-url-config-value-is-not-empty">
-<h2>Step 19: Make sure your &#8216;base_url&#8217; config value is not empty<a class="headerlink" href="#step-19-make-sure-your-base-url-config-value-is-not-empty" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 19: Make sure your &#8216;base_url&#8217; config value is not empty<a class="headerlink" href="#step-19-make-sure-your-base-url-config-value-is-not-empty" title="Permalink to this headline">¶</a></h2>
 <p>When <tt class="docutils literal"><span class="pre">$config['base_url']</span></tt> is not set, CodeIgniter tries to automatically
 detect what your website&#8217;s base URL is. This is done purely for convenience
 when you are starting development of a new application.</p>
@@ -878,7 +877,7 @@ which you can create this logic with a few lines of code. For example:</p>
 </div>
 </div>
 <div class="section" id="step-20-remove-usage-of-previously-deprecated-functionalities">
-<h2>Step 20: Remove usage of (previously) deprecated functionalities<a class="headerlink" href="#step-20-remove-usage-of-previously-deprecated-functionalities" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 20: Remove usage of (previously) deprecated functionalities<a class="headerlink" href="#step-20-remove-usage-of-previously-deprecated-functionalities" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the <tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> configuration setting, there&#8217;s a
 number of other functionalities that have been removed in CodeIgniter 3.0.0:</p>
 <div class="section" id="the-sha1-library">
@@ -910,7 +909,7 @@ availability) or PHP 5.3.3 and the <a class="reference external" href="http://ph
 While this might be rather inconvenient, it is a requirement that allows us to have properly
 implemented cryptographic functions.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The <a class="reference internal" href="../libraries/encrypt.html"><em>Encrypt Library</em></a> is still available for the purpose
 of keeping backwards compatibility.</p>
 </div>
@@ -924,7 +923,7 @@ of keeping backwards compatibility.</p>
 <p>The <a class="reference internal" href="../libraries/cart.html"><em>Cart Library</em></a>, similarly to the <a class="reference internal" href="../helpers/smiley_helper.html"><em>Auxiliar de Smiley</em></a> is too specific for CodeIgniter. It is now deprecated
 and scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The library is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later.</p>
 </div>
@@ -942,7 +941,7 @@ all depend on PHP extensions that for different reasons no longer exist since PH
 CodeIgniter versions. You should use the more advanced, <strong>sqlite3</strong>, <strong>sqlsrv</strong> or <strong>pdo/sqlsrv</strong>
 drivers respectively.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">These drivers are still available, but you&#8217;re strongly encouraged to switch to other ones
 sooner rather than later.</p>
 </div>
@@ -952,7 +951,7 @@ sooner rather than later.</p>
 <p><a class="reference internal" href="../helpers/security_helper.html"><em>Auxiliar de Segurança</em></a> function <tt class="docutils literal"><span class="pre">do_hash()</span></tt> is now just an alias for
 PHP&#8217;s native <tt class="docutils literal"><span class="pre">hash()</span></tt> function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This function is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later.</p>
 </div>
@@ -968,7 +967,7 @@ is now deprecated.</p>
 library like <a class="reference external" href="http://htmlpurifier.org/">HTML Purifier</a> that does that
 for you.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The setting is still available, but you&#8217;re strongly encouraged to
 remove its usage sooner rather than later.</p>
 </div>
@@ -979,7 +978,7 @@ remove its usage sooner rather than later.</p>
 PHP&#8217;s native <tt class="docutils literal"><span class="pre">file_get_contents()</span></tt> function. It is deprecated and scheduled for removal in
 CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This function is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later.</p>
 </div>
@@ -989,7 +988,7 @@ rather than later.</p>
 <p><a class="reference internal" href="../helpers/string_helper.html"><em>Auxiliar de String</em></a> function <a class="reference internal" href="../helpers/string_helper.html#repeater" title="repeater"><tt class="xref php php-func docutils literal"><span class="pre">repeater()</span></tt></a> is now just an alias for
 PHP&#8217;s native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> function. It is deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This function is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later.</p>
 </div>
@@ -1000,7 +999,7 @@ rather than later.</p>
 for PHP&#8217;s native <tt class="docutils literal"><span class="pre">trim()</span></tt> function (with a slash passed as its second argument). It is deprecated and
 scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This function is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later.</p>
 </div>
@@ -1012,7 +1011,7 @@ is now just an alias for <a class="reference internal" href="../general/common_f
 <tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt>. It is deprecated and will be removed in the future.</p>
 <p>Please use <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a> instead.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This function is still available, but you&#8217;re strongly encouraged
 to remove its usage sooner rather than later.</p>
 </div>
@@ -1030,7 +1029,7 @@ to remove its usage sooner rather than later.</p>
 Therefore the <a class="reference internal" href="../helpers/email_helper.html"><em>Auxiliar de Email</em></a> altogether is being deprecated and
 is scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">These functions are still available, but you&#8217;re strongly encouraged to remove their usage
 sooner rather than later.</p>
 </div>
@@ -1056,7 +1055,7 @@ its usage:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This function is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later as it is scheduled for removal in CodeIgniter 3.1+.</p>
 </div>
@@ -1068,7 +1067,7 @@ for the native <tt class="docutils literal"><span class="pre">str_repeat()</span
 <p>Because there&#8217;s no point in just aliasing native PHP functions, they are now deprecated and
 scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">These functions are still available, but you&#8217;re strongly encouraged to remove their usage
 sooner rather than later.</p>
 </div>
@@ -1081,7 +1080,7 @@ attribute to your anchors via the &#8216;attributes&#8217; configuration setting
 As a result of that, the &#8216;anchor_class&#8217; setting is now deprecated and scheduled for removal in
 CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This setting is still available, but you&#8217;re strongly encouraged to remove its usage sooner
 rather than later.</p>
 </div>
@@ -1093,7 +1092,7 @@ you should no longer pass the <strong>unique</strong> and <strong>encrypt</stron
 aliases for <strong>md5</strong> and <strong>sha1</strong> respectively and are now deprecated and scheduled for removal
 in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">These options are still available, but you&#8217;re strongly encouraged to remove their usage
 sooner rather than later.</p>
 </div>
@@ -1107,7 +1106,7 @@ should write &#8216;-&#8216; instead of &#8216;dash&#8217; and &#8216;_&#8217; i
 <p><strong>dash</strong> and <strong>underscore</strong> now act as aliases and are deprecated and scheduled for removal
 in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">These options are still available, but you&#8217;re strongly encouraged to remove their usage
 sooner rather than later.</p>
 </div>
@@ -1123,7 +1122,7 @@ method <tt class="docutils literal"><span class="pre">userdata()</span></tt> now
 <tt class="docutils literal"><span class="pre">userdata()</span></tt> with the above shown usage and is being deprecated and scheduled for removal
 in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This method is still available, but you&#8217;re strongly encouraged to remove its usage
 sooner rather than later.</p>
 </div>
@@ -1150,12 +1149,12 @@ sooner rather than later.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The parameter is still available, but you&#8217;re strongly encouraged to remove its usage
 sooner rather than later.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This is for MySQL and CUBRID databases only! Other drivers don&#8217;t support this
 clause and will silently ignore it.</p>
 </div>
@@ -1174,7 +1173,7 @@ then you can now just access the properties instead:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">Those methods are still available, but you&#8217;re strongly encouraged to remove their usage
 sooner rather than later.</p>
 </div>
@@ -1195,7 +1194,7 @@ function named <a class="reference internal" href="../general/common_functions.h
 <p><tt class="docutils literal"><span class="pre">CI_Input::is_cli_request()</span></tt> is now now deprecated and scheduled for removal in
 CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This method is still available, but you&#8217;re strongly encouraged to remove its usage
 sooner rather than later.</p>
 </div>
@@ -1208,7 +1207,7 @@ from a security point of view.</p>
 <p>Because of this, this method is now deprecated and scheduled for removal in
 CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This method is still available, but you&#8217;re strongly encouraged to remove its usage
 sooner rather than later.</p>
 </div>
@@ -1218,7 +1217,7 @@ sooner rather than later.</p>
 &#8216;experimental&#8217; status and was never really useful, nor a proper solution.</p>
 <p>It is now deprecated and scheduled for removal in CodeIgniter 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">This library is still available, but you&#8217;re strongly encouraged to remove its usage
 sooner rather than later.</p>
 </div>
@@ -1236,14 +1235,14 @@ automatically perform HTML escaping when necessary.</p>
 <p>Therefore, the <em>prep_for_form</em> method/rule is pretty much useless and is now
 deprecated and scheduled for removal in 3.1+.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Nota</p>
 <p class="last">The method is still available, but you&#8217;re strongly encouraged to
 remove its usage sooner rather than later.</p>
 </div>
 </div>
 </div>
 <div class="section" id="step-21-check-your-usage-of-text-helper-highlight-phrase">
-<h2>Step 21: Check your usage of Text helper highlight_phrase()<a class="headerlink" href="#step-21-check-your-usage-of-text-helper-highlight-phrase" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 21: Check your usage of Text helper highlight_phrase()<a class="headerlink" href="#step-21-check-your-usage-of-text-helper-highlight-phrase" title="Permalink to this headline">¶</a></h2>
 <p>The default HTML tag used by <a class="reference internal" href="../helpers/text_helper.html"><em>Auxiliar de Texto</em></a> function
 <tt class="xref py py-func docutils literal"><span class="pre">highlight_phrase()</span></tt> has been changed from <tt class="docutils literal"><span class="pre">&lt;strong&gt;</span></tt> to the new HTML5
 tag <tt class="docutils literal"><span class="pre">&lt;mark&gt;</span></tt>.</p>

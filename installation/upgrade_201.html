@@ -427,26 +427,24 @@
 
   <div class="section" id="upgrading-from-2-0-0-to-2-0-1">
 <h1>Upgrading from 2.0.0 to 2.0.1<a class="headerlink" href="#upgrading-from-2-0-0-to-2-0-1" title="Permalink to this headline">¶</a></h1>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
 <p>Replace all files and directories in your &#8220;system&#8221; folder and replace
 your index.php file. If any modifications were made to your index.php
 they will need to be made fresh in this new one.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have any custom developed files in these folders please
-make copies of them first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
 </div>
 </div>
 <div class="section" id="step-2-replace-config-mimes-php">
-<h2>Step 2: Replace config/mimes.php<a class="headerlink" href="#step-2-replace-config-mimes-php" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 2: Substitua o config/mimes.php<a class="headerlink" href="#step-2-replace-config-mimes-php" title="Permalink to this headline">¶</a></h2>
 <p>This config file has been updated to contain more mime types, please
 copy it to application/config/mimes.php.</p>
 </div>
 <div class="section" id="step-3-check-for-forms-posting-to-default-controller">
-<h2>Step 3: Check for forms posting to default controller<a class="headerlink" href="#step-3-check-for-forms-posting-to-default-controller" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 3: Check for forms posting to default controller<a class="headerlink" href="#step-3-check-for-forms-posting-to-default-controller" title="Permalink to this headline">¶</a></h2>
 <p>The default behavior for form_open() when called with no parameters
 used to be to post to the default controller, but it will now just leave
 an empty action=&#8221;&#8221; meaning the form will submit to the current URL. If

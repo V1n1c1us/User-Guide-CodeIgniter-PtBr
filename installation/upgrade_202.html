@@ -427,27 +427,25 @@
 
   <div class="section" id="upgrading-from-2-0-1-to-2-0-2">
 <h1>Upgrading from 2.0.1 to 2.0.2<a class="headerlink" href="#upgrading-from-2-0-1-to-2-0-2" title="Permalink to this headline">¶</a></h1>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
 <p>Replace all files and directories in your &#8220;system&#8221; folder and replace
 your index.php file. If any modifications were made to your index.php
 they will need to be made fresh in this new one.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have any custom developed files in these folders please
-make copies of them first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
 </div>
 </div>
 <div class="section" id="step-2-remove-loading-calls-for-the-security-library">
-<h2>Step 2: Remove loading calls for the Security Library<a class="headerlink" href="#step-2-remove-loading-calls-for-the-security-library" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 2: Remove loading calls for the Security Library<a class="headerlink" href="#step-2-remove-loading-calls-for-the-security-library" title="Permalink to this headline">¶</a></h2>
 <p>Security has been moved to the core and is now always loaded
 automatically. Make sure you remove any loading calls as they will
 result in PHP errors.</p>
 </div>
 <div class="section" id="step-3-move-my-security">
-<h2>Step 3: Move MY_Segurança<a class="headerlink" href="#step-3-move-my-security" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 3: Move MY_Segurança<a class="headerlink" href="#step-3-move-my-security" title="Permalink to this headline">¶</a></h2>
 <p>If you are overriding or extending the Security library, you will need
 to move it to application/core.</p>
 <p>csrf_token_name and csrf_hash have changed to protected class

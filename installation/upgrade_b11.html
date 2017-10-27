@@ -429,13 +429,13 @@
 <h1>Upgrading From Beta 1.0 to Beta 1.1<a class="headerlink" href="#upgrading-from-beta-1-0-to-beta-1-1" title="Permalink to this headline">¶</a></h1>
 <p>To upgrade to Beta 1.1 please perform the following steps:</p>
 <div class="section" id="step-1-replace-your-index-file">
-<h2>Step 1: Replace your index file<a class="headerlink" href="#step-1-replace-your-index-file" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 1: Replace your index file<a class="headerlink" href="#step-1-replace-your-index-file" title="Permalink to this headline">¶</a></h2>
 <p>Replace your main index.php file with the new index.php file. Note: If
 you have renamed your &#8220;system&#8221; folder you will need to edit this info in
 the new file.</p>
 </div>
 <div class="section" id="step-2-relocate-your-config-folder">
-<h2>Step 2: Relocate your config folder<a class="headerlink" href="#step-2-relocate-your-config-folder" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 2: Relocate your config folder<a class="headerlink" href="#step-2-relocate-your-config-folder" title="Permalink to this headline">¶</a></h2>
 <p>This version of CodeIgniter now permits multiple sets of &#8220;applications&#8221;
 to all share a common set of backend files. In order to enable each
 application to have its own configuration values, the config directory
@@ -443,7 +443,7 @@ must now reside inside of your application folder, so please move it
 there.</p>
 </div>
 <div class="section" id="step-3-replace-directories">
-<h2>Step 3: Replace directories<a class="headerlink" href="#step-3-replace-directories" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 3: Replace directories<a class="headerlink" href="#step-3-replace-directories" title="Permalink to this headline">¶</a></h2>
 <p>Replace the following directories with the new versions:</p>
 <ul class="simple">
 <li>drivers</li>
@@ -454,13 +454,13 @@ there.</p>
 </ul>
 </div>
 <div class="section" id="step-4-add-the-calendar-language-file">
-<h2>Step 4: Add the calendar language file<a class="headerlink" href="#step-4-add-the-calendar-language-file" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 4: Add the calendar language file<a class="headerlink" href="#step-4-add-the-calendar-language-file" title="Permalink to this headline">¶</a></h2>
 <p>There is a new language file corresponding to the new calendaring class
 which must be added to your language folder. Add the following item to
 your version: language/english/calendar_lang.php</p>
 </div>
 <div class="section" id="step-5-edit-your-config-file">
-<h2>Step 5: Edit your config file<a class="headerlink" href="#step-5-edit-your-config-file" title="Permalink to this headline">¶</a></h2>
+<h2>Passo 5: Edit your config file<a class="headerlink" href="#step-5-edit-your-config-file" title="Permalink to this headline">¶</a></h2>
 <p>The original application/config/config.php file has a typo in it Open
 the file and look for the items related to cookies:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$conf</span><span class="p">[</span><span class="s1">&#39;cookie_prefix&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Upgrading from 1.4.0 to 1.4.1 &mdash; Documentação do CodeIgniter 3.1.0</title>
+  <title>Atualizando da versão 1.4.0 para 1.4.1 &mdash; Documentação do CodeIgniter 3.1.0</title>
 
 
 
@@ -32,8 +32,8 @@
 
     <link rel="top" title="Documentação do CodeIgniter 3.1.0" href="../index.html"/>
         <link rel="up" title="Atualizando de uma versão anterior" href="upgrading.html"/>
-        <link rel="next" title="Upgrading from 1.3.3 to 1.4.0" href="upgrade_140.html"/>
-        <link rel="prev" title="Upgrading from 1.4.1 to 1.5.0" href="upgrade_150.html"/>
+        <link rel="next" title="Atualizando da versão 1.3.3 para 1.4.0" href="upgrade_140.html"/>
+        <link rel="prev" title="Atualizando da versão 1.4.1 para 1.5.0" href="upgrade_150.html"/>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -413,7 +413,7 @@
 
         <li><a href="upgrading.html">Atualizando de uma versão anterior</a> &raquo;</li>
 
-    <li>Upgrading from 1.4.0 to 1.4.1</li>
+    <li>Atualizando da versão 1.4.0 para 1.4.1</li>
     <li class="wy-breadcrumbs-aside">
 
     </li>
@@ -426,22 +426,18 @@
           <div role="main" class="document">
 
   <div class="section" id="upgrading-from-1-4-0-to-1-4-1">
-<h1>Upgrading from 1.4.0 to 1.4.1<a class="headerlink" href="#upgrading-from-1-4-0-to-1-4-1" title="Permalink to this headline">¶</a></h1>
+<h1>Atualizando da versão 1.4.0 para 1.4.1<a class="headerlink" href="#upgrading-from-1-4-0-to-1-4-1" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The instructions on this page assume you are running version
-1.4.0. If you have not upgraded to that version please do so first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">As instruções nesta página supõem que você está executando a versão 1.4.0. Se você não atualizou para essa versão, faça isso primeiro.</p>
 </div>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
+<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
 <h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
-<p>Replace the following directories in your &#8220;system&#8221; folder with the new
-versions:</p>
+<p>Substitua os seguintes diretórios na pasta "system" com as novas versões:</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you have any custom developed files in these folders please
-make copies of them first.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
 </div>
 <ul class="simple">
 <li>codeigniter</li>
@@ -451,8 +447,8 @@ make copies of them first.</p>
 </ul>
 </div>
 <div class="section" id="step-2-update-your-config-php-file">
-<h2>Step 2: Update your config.php file<a class="headerlink" href="#step-2-update-your-config-php-file" title="Permalink to this headline">¶</a></h2>
-<p>Open your application/config/config.php file and add this new item:</p>
+<h2>Passo 2: Atualize seu arquivo config.php<a class="headerlink" href="#step-2-update-your-config-php-file" title="Permalink to this headline">¶</a></h2>
+<p>Abra seu arquivo application/config/config.php e adicione estes novos itens:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">|--------------------------------------------------------------------------</span>
 <span class="cm">| Output Compression</span>
@@ -475,23 +471,21 @@ make copies of them first.</p>
 </div>
 </div>
 <div class="section" id="step-3-rename-an-autoload-item">
-<h2>Step 3: Rename an Autoload Item<a class="headerlink" href="#step-3-rename-an-autoload-item" title="Permalink to this headline">¶</a></h2>
-<p>Open the following file: application/config/autoload.php</p>
-<p>Find this array item:</p>
+<h2>Passo 3: Renomeie o Item Autoload<a class="headerlink" href="#step-3-rename-an-autoload-item" title="Permalink to this headline">¶</a></h2>
+<p>Abra o seguinte arquivo: application/config/autoload.php</p>
+<p>Procure esse item de array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>And rename it to this:</p>
+<p>E renomeie para isso:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;libraries&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>This change was made to improve clarity since some users were not sure
-that their own libraries could be auto-loaded.</p>
+<p>Essa alteração foi feita para melhorar a clareza, já que alguns usuários não tinham certeza de que suas próprias bibliotecas poderiam ser carregadas automaticamente.</p>
 </div>
 <div class="section" id="step-4-update-your-user-guide">
-<h2>Step 4: Update your user guide<a class="headerlink" href="#step-4-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
-<p>Please also replace your local copy of the user guide with the new
-version.</p>
+<h2>Passo 4: Atualize seu guia do usuário<a class="headerlink" href="#step-4-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
+<p>Também substitua sua cópia local do guia do usuário pela nova versão.</p>
 </div>
 </div>
 
@@ -501,10 +495,10 @@ version.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
 
-        <a href="upgrade_140.html" class="btn btn-neutral float-right" title="Upgrading from 1.3.3 to 1.4.0">Próximo <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="upgrade_140.html" class="btn btn-neutral float-right" title="Atualizando da versão 1.3.3 para 1.4.0">Próximo <span class="fa fa-arrow-circle-right"></span></a>
 
 
-        <a href="upgrade_150.html" class="btn btn-neutral" title="Upgrading from 1.4.1 to 1.5.0"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
+        <a href="upgrade_150.html" class="btn btn-neutral" title="Atualizando da versão 1.4.1 para 1.5.0"><span class="fa fa-arrow-circle-left"></span> Anterior</a>
 
     </div>
 
