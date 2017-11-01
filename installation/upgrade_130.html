@@ -1,13 +1,11 @@
-
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-br" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Upgrading from 1.2 to 1.3 &mdash; Documentação do CodeIgniter 3.1.0</title>
+  <title>Atualizando da versão 1.2 para 1.3 &mdash; Documentação do CodeIgniter 3.1.0</title>
 
 
 
@@ -413,7 +411,7 @@
 
         <li><a href="upgrading.html">Atualizando de uma versão anterior</a> &raquo;</li>
 
-    <li>Upgrading from 1.2 to 1.3</li>
+    <li>Atualizando da versão 1.2 para 1.3</li>
     <li class="wy-breadcrumbs-aside">
 
     </li>
@@ -426,17 +424,15 @@
           <div role="main" class="document">
 
   <div class="section" id="upgrading-from-1-2-to-1-3">
-<h1>Upgrading from 1.2 to 1.3<a class="headerlink" href="#upgrading-from-1-2-to-1-3" title="Permalink to this headline">¶</a></h1>
+<h1>Atualizando da versão 1.2 para 1.3<a class="headerlink" href="#upgrading-from-1-2-to-1-3" title="Link permanente para este título">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
-<p class="last">The instructions on this page assume you are running version
-1.2. If you have not upgraded to that version please do so first.</p>
+<p class="last">As instruções nesta página presumem que você está rodando a versão 1.2. Se você não tiver atualizado para esta versão, favor atualizar primeiro.</p>
 </div>
-<p>Antes de executar uma atualização, você deve colocar seu site em manutenção substituindo o arquivo index.php por um arquivo estático.</p>
+<p>Antes de executar uma atualização você deveria deixar seu site offline para substituir o arquivo index.php por um estático.</p>
 <div class="section" id="step-1-update-your-codeigniter-files">
-<h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h2>
-<p>Replace the following directories in your &#8220;system&#8221; folder with the new
-versions:</p>
+<h2>Passo 1: Atualize os arquivos do CodeIgniter<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Link permanente para este título">¶</a></h2>
+<p>Substitua os seguintes diretórios na sua pasta &#8220;system&#8221; com as novas versões:</p>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">Se você tiver algum arquivo personalizado nessas pastas, faça cópias deles primeiro.</p>
@@ -454,38 +450,34 @@ versions:</p>
 </ul>
 </div>
 <div class="section" id="step-2-update-your-error-files">
-<h2>Passo 2: Update your error files<a class="headerlink" href="#step-2-update-your-error-files" title="Permalink to this headline">¶</a></h2>
-<p>Version 1.3 contains two new error templates located in
-application/errors, and for naming consistency the other error templates
-have been renamed.</p>
-<p>If you <strong>have not</strong> customized any of the error templates simply replace
-this folder:</p>
+<h2>Passo 2: Atualize seus arquivos de erro<a class="headerlink" href="#step-2-update-your-error-files" title="Link permanente para este título">¶</a></h2>
+<p>Versão 1.3 contém dois novos modelos de erros localizados em application/errors, e para consistência de nomenclatura os outros modelos de erros foram renomeados.</p>
+<p>Se você <strong>não tiver</strong> personalizado qualquer um dos modelos de erro, simplesmente substitua esta pasta:</p>
 <ul class="simple">
 <li>application/errors/</li>
 </ul>
-<p>If you <strong>have</strong> customized your error templates, rename them as follows:</p>
+<p>Se você <strong>tem</strong> modelos de erros personalizados, renomeio-os como a seguir:</p>
 <ul class="simple">
 <li>404.php = error_404.php</li>
 <li>error.php = error_general.php</li>
-<li>error_db.php (new)</li>
-<li>error_php.php (new)</li>
+<li>error_db.php (novo)</li>
+<li>error_php.php (novo)</li>
 </ul>
 </div>
 <div class="section" id="step-3-update-your-index-php-file">
-<h2>Passo 3: Update your index.php file<a class="headerlink" href="#step-3-update-your-index-php-file" title="Permalink to this headline">¶</a></h2>
-<p>Please open your main index.php file (located at your root). At the very
-bottom of the file, change this:</p>
+<h2>Passo 3: Atualize seu arquivo index.php<a class="headerlink" href="#step-3-update-your-index-php-file" title="Link permanente para este título">¶</a></h2>
+<p>Por favor abra o seu arquivo index.php principal (localizado na pasta raíz). No final do arquivo, mude isto:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">require_once</span> <span class="nx">BASEPATH</span><span class="o">.</span><span class="s1">&#39;libraries/Front_controller&#39;</span><span class="o">.</span><span class="nx">EXT</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>To this:</p>
+<p>Para isto:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">require_once</span> <span class="nx">BASEPATH</span><span class="o">.</span><span class="s1">&#39;codeigniter/CodeIgniter&#39;</span><span class="o">.</span><span class="nx">EXT</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-4-update-your-config-php-file">
-<h2>Passo 4: Update your config.php file<a class="headerlink" href="#step-4-update-your-config-php-file" title="Permalink to this headline">¶</a></h2>
-<p>Open your application/config/config.php file and add these new items:</p>
+<h2>Passo 4: Atualize seu arquivo config.php<a class="headerlink" href="#step-4-update-your-config-php-file" title="Link permanente para este título">¶</a></h2>
+<p>Abra seu arquivo application/config/config.php e adicione estas novas linhas:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="cm">/*</span>
 <span class="cm">|------------------------------------------------</span>
 <span class="cm">| URL suffix</span>
@@ -534,16 +526,16 @@ bottom of the file, change this:</p>
 </div>
 </div>
 <div class="section" id="step-5-update-your-database-php-file">
-<h2>Passo 5: Update your database.php file<a class="headerlink" href="#step-5-update-your-database-php-file" title="Permalink to this headline">¶</a></h2>
-<p>Open your application/config/database.php file and add these new items:</p>
+<h2>Passo 5: Atualize seu arquivo database.php<a class="headerlink" href="#step-5-update-your-database-php-file" title="Link permanente para este título">¶</a></h2>
+<p>Abra seu arquivo application/config/database.php e adicione estes novos itens:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dbprefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 <span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;active_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-6-update-your-user-guide">
-<h2>Passo 6: Atualize seu guia de usuário<a class="headerlink" href="#step-6-update-your-user-guide" title="Permalink to this headline">¶</a></h2>
-<p>Também substitua sua cópia local do guia do usuário pela nova versão.</p>
+<h2>Passo 6: Atualize seu guia de usuário<a class="headerlink" href="#step-6-update-your-user-guide" title="Link permanente para este título">¶</a></h2>
+<p>Por favor também substitua sua cópia local do guia do usuário para a nova versão.</p>
 </div>
 </div>
 
